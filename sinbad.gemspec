@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.date = %q{2011-08-28}
   s.description = %q{A simple framework and set of helpers for sinatra projects}
   s.email = %q{lvturner@gmail.com}
+  s.executables = [%q{sinbad}]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -24,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bin/sinbad",
     "lib/sinbad.rb",
     "sinbad.gemspec",
     "test/helper.rb",
