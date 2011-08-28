@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "sinbad"
   gem.homepage = "http://github.com/lvturner/sinbad"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A simple framework and set of helpers for sinatra projects}
+  gem.description = %Q{A simple framework and set of helpers for sinatra projects}
   gem.email = "lvturner@gmail.com"
   gem.authors = ["Lee Turner"]
   # dependencies defined in Gemfile
