@@ -9,7 +9,11 @@ class SinbadApp < Sinatra::Application
   get '/stylesheets/*.css' do |sheet|
     scss sheet
   end
-
-  require 'routes'
 end
-   
+
+
+dir = "routes/*/"
+Dir[File.join(dir, "*.rb")].each do |file| 
+  puts "Trying #{file}"
+  require "#{File.join(File.dirname(file), File.basename( file, File.extname(file)))}"
+end
