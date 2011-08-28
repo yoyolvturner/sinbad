@@ -1,6 +1,9 @@
 = sinbad
+A simple set of tools for quickly creating sinatra projects.
 
-Description goes here.
+Makes a few assumptions about directory layout.
+
+Makes no assumptions about storage/database backend
 
 == Contributing to sinbad
  
