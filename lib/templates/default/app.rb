@@ -9,10 +9,12 @@ class SinbadApp < Sinatra::Application
   get '/stylesheets/*.css' do |sheet|
     scss sheet
   end
+
+  # load all our other actions
+  dir = "actions/*/"
+  Dir[File.join(dir, "*.rb")].each do |file| 
+    require "#{File.join(File.dirname(file), File.basename( file, File.extname(file)))}"
+  end
 end
 
 
-dir = "actions/*/"
-Dir[File.join(dir, "*.rb")].each do |file| 
-  require "#{File.join(File.dirname(file), File.basename( file, File.extname(file)))}"
-end

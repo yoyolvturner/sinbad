@@ -1,3 +1,4 @@
-get '/index' do
-  "Hello world"
-end
+  get '/' do
+    @title = "Home page"
+    haml :'index/index'
+  end
