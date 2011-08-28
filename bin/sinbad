@@ -4,25 +4,25 @@ require 'fileutils'
 
 def create_directories(root_directory)
   Dir::mkdir(root_directory)
-  puts "Created #{root_directory}"
+  puts "Created project \"#{root_directory}\"\n"
 
   Dir::mkdir(root_directory + "/config")
-  puts "/t - #{"/config"}"
+  puts "\tconfig/"
 
   Dir::mkdir(root_directory + "/public")
-  puts "/t - #{"/public"}"
+  puts "\tpublic/"
 
   Dir::mkdir(root_directory + "/public/images")
-  puts "/t/t - #{"/images"}"
+  puts "\t'-images/"
 
   Dir::mkdir(root_directory + "/public/javascripts")
-  puts "/t/t - #{"/javascripts"}"
+  puts "\t'-javascripts/"
 
   Dir::mkdir(root_directory + "/public/stylesheets")
-  puts "/t/t - #{"/stylesheets"}"
+  puts "\t'-stylesheets/"
 
   Dir::mkdir(root_directory + "/views")
-  puts "/t -  #{"/views"}"
+  puts "\tviews/"
 end
 OptionParser.new do |options|
   options.banner = "Usage: #{File.basename($0)} [path]"
