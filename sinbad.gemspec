@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/sinbad.rb",
+    "sinbad.gemspec",
     "test/helper.rb",
     "test/test_sinbad.rb"
   ]
