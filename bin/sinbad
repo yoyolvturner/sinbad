@@ -8,5 +8,5 @@ unless ARGV.first == 'serve'
 else
   # replace this later (and probably the entire unless statement)
   # need to do a quick check for config.ru and the likes
-  exit `unicorn`
+  exit `shotgun config.ru`
 end
