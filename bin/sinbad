@@ -1,2 +1,48 @@
 #!/usr/bin/env ruby
-puts "I'm sinbad - the sailor!"
+require 'optparse'
+require 'fileutils'
+
+def create_directories(root_directory)
+  Dir::mkdir(root_directory)
+  puts "Created #{root_directory}"
+
+  Dir::mkdir(root_directory + "/config")
+
+  Dir::mkdir(root_directory + "/public")
+
+  Dir::mkdir(root_directory + "/public/images")
+
+  Dir::mkdir(root_directory + "/public/javascripts")
+
+  Dir::mkdir(root_directory + "/public/stylesheets")
+
+  Dir::mkdir(root_directory + "/views")
+end
+OptionParser.new do |options|
+  options.banner = "Usage: #{File.basename($0)} [path]"
+
+  options.on("-h", "--help", "Displays this help info") do
+    puts options
+    exit 0
+  end
+
+  begin
+    options.parse!(ARGV)
+  rescue OptionParser::ParseError => e
+    warn e.message
+    puts options
+    exit 1
+  end
+  
+  # Quick ARGV check
+  if ARGV.empty?
+    abort "No directory specified!"
+  elsif File.exists?(ARGV.first)
+    abort "Directory already exists"
+  elsif ARGV.length > 1
+    abort "I don't think you meant to do that..."
+  end
+
+  create_directories(ARGV.first)
+end
+
