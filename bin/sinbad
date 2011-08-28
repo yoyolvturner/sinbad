@@ -7,16 +7,22 @@ def create_directories(root_directory)
   puts "Created #{root_directory}"
 
   Dir::mkdir(root_directory + "/config")
+  puts "/t - #{"/config"}"
 
   Dir::mkdir(root_directory + "/public")
+  puts "/t - #{"/public"}"
 
   Dir::mkdir(root_directory + "/public/images")
+  puts "/t/t - #{"/images"}"
 
   Dir::mkdir(root_directory + "/public/javascripts")
+  puts "/t/t - #{"/javascripts"}"
 
   Dir::mkdir(root_directory + "/public/stylesheets")
+  puts "/t/t - #{"/stylesheets"}"
 
   Dir::mkdir(root_directory + "/views")
+  puts "/t -  #{"/views"}"
 end
 OptionParser.new do |options|
   options.banner = "Usage: #{File.basename($0)} [path]"
