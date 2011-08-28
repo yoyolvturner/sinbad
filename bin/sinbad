@@ -1,54 +1,6 @@
 #!/usr/bin/env ruby
-require 'optparse'
-require 'fileutils'
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
-def create_directories(root_directory)
-  Dir::mkdir(root_directory)
-  puts "Created project \"#{root_directory}\"\n"
+require 'sinbad/generator'
 
-  Dir::mkdir(root_directory + "/config")
-  puts "\tconfig/"
-
-  Dir::mkdir(root_directory + "/public")
-  puts "\tpublic/"
-
-  Dir::mkdir(root_directory + "/public/images")
-  puts "\t'-images/"
-
-  Dir::mkdir(root_directory + "/public/javascripts")
-  puts "\t'-javascripts/"
-
-  Dir::mkdir(root_directory + "/public/stylesheets")
-  puts "\t'-stylesheets/"
-
-  Dir::mkdir(root_directory + "/views")
-  puts "\tviews/"
-end
-OptionParser.new do |options|
-  options.banner = "Usage: #{File.basename($0)} [path]"
-
-  options.on("-h", "--help", "Displays this help info") do
-    puts options
-    exit 0
-  end
-
-  begin
-    options.parse!(ARGV)
-  rescue OptionParser::ParseError => e
-    warn e.message
-    puts options
-    exit 1
-  end
-  
-  # Quick ARGV check
-  if ARGV.empty?
-    abort "No directory specified!"
-  elsif File.exists?(ARGV.first)
-    abort "Directory already exists"
-  elsif ARGV.length > 1
-    abort "I don't think you meant to do that..."
-  end
-
-  create_directories(ARGV.first)
-end
-
+exit Sinbad::Generator::Application.run!(*ARGV)
