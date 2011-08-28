@@ -3,5 +3,5 @@ get '/' do
 end
 
 get '/new_route' do
-  "UNICORN!!!"
+  "SHOTGUN!!!"
 end
