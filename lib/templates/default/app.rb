@@ -12,8 +12,7 @@ class SinbadApp < Sinatra::Application
 end
 
 
-dir = "routes/*/"
+dir = "actions/*/"
 Dir[File.join(dir, "*.rb")].each do |file| 
-  puts "Trying #{file}"
   require "#{File.join(File.dirname(file), File.basename( file, File.extname(file)))}"
 end

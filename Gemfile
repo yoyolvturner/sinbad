@@ -13,5 +13,5 @@ group :development do
 end
 
 gem "haml","3.1.2"
-gem "unicorn","4.1.1"
+gem "shotgun", "0.9"
 gem "sinatra", "1.2.6"

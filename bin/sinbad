@@ -8,5 +8,5 @@ unless ARGV.first == 'serve'
 else
   # replace this later (and probably the entire unless statement)
   # need to do a quick check for config.ru and the likes
-  exit `shotgun config.ru`
+  exit `shotgun --debug --port 4567 config.ru`
 end
