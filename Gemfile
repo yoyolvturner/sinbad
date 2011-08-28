@@ -15,3 +15,4 @@ end
 gem "haml","3.1.2"
 gem "shotgun","0.9"
 gem "sinatra", "1.2.6"
+gem "sass", "3.1.7"
