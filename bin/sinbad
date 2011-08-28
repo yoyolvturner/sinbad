@@ -3,4 +3,10 @@ $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'sinbad/generator'
 
-exit Sinbad::Generator::Application.run!(*ARGV)
+unless ARGV.first == 'serve'
+  exit Sinbad::Generator::Application.run!(*ARGV)
+else
+  # replace this later (and probably the entire unless statement)
+  # need to do a quick check for config.ru and the likes
+  exit `unicorn`
+end
